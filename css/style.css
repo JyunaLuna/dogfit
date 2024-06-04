@@ -1,0 +1,1478 @@
+/* font - Raleway */
+@font-face {
+  font-family: "Raleway";
+  src: url("../font/Raleway-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../font/Raleway-Medium.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../font/Raleway-SemiBold.woff") format("woff");
+  font-weight: normal;
+  font-style: 500;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../font/Raleway-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: 700;
+}
+
+/* font - 스포카 한 산스 네오 */
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  src: url("../font/SpoqaHanSansNeo-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  src: url("../font/SpoqaHanSansNeo-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  src: url("../font/SpoqaHanSansNeo-Regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  src: url("../font/SpoqaHanSansNeo-Medium.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  src: url("../font/SpoqaHanSansNeo-Bold.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+* {
+  font: 16px "Raleway", "SpoqaHanSansNeo";
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.wrap_1600 {
+  position: relative;
+  width: 83.333%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mr0 {
+  margin-right: 0 !important;
+}
+
+.mb0 {
+  margin-bottom: 0;
+}
+
+/* gnb */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 8.21vh;
+
+  z-index: 10;
+
+  background: linear-gradient(95deg, #ffffff 0%, rgba(255, 255, 255, 0) 99.98%);
+  filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.04));
+  backdrop-filter: blur(20px);
+}
+
+.header_wrap {
+  position: relative;
+  width: 83.33%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+header .header_wrap h1 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+header .header_wrap h1 a {
+  display: block;
+  width: 6.25rem;
+  height: 1.25rem;
+  background: url(../img/logo.png) no-repeat center;
+  background-size: contain;
+  font-size: 0;
+}
+
+.gnav {
+  width: 60%;
+  height: 100%;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+.gnav .gnav_wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.gnav_wrap li.gnav_1depth {
+  position: relative;
+  float: left;
+
+  width: 23.5%;
+  min-width: 60px;
+  margin-right: 2%;
+  text-align: center;
+}
+.gnav_wrap .gnav_1depth > a {
+  display: block;
+  color: #111;
+  text-align: center;
+  font: 500 1rem/5rem "Raleway", "SpoqaHanSansNeo";
+}
+
+.gnav > .gnav_wrap > li.gnav_1depth:hover > a {
+  color: #069efc;
+  font: 700 1rem/5rem "Raleway", "SpoqaHanSansNeo";
+}
+
+.sub {
+  display: block;
+  position: absolute;
+  width: 100%;
+  top: 8.2vh;
+  left: -5%;
+  margin: 0 10px;
+  visibility: hidden;
+
+  padding: 10px 10px 20px;
+  box-sizing: border-box;
+
+  opacity: 0;
+  transition: opacity 0.2s 0.2s;
+}
+
+.sub a {
+  color: #111;
+  display: block;
+  padding: 1vw;
+  font: 300 1rem/1rem "Raleway", "SpoqaHanSansNeo";
+}
+
+.sub a:hover {
+  color: #069efc;
+  font-weight: 500;
+}
+
+.gnav:hover .sub {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+.gnav::after {
+  content: "";
+  display: block;
+  width: 200vw;
+  height: 0;
+  background: #ffffffab;
+  backdrop-filter: blur(20px);
+
+  position: absolute;
+  top: 8.2vh;
+  left: -200px;
+
+  z-index: -1;
+  transition: height 0.4s;
+}
+
+.gnav:hover::after {
+  height: 26vh;
+  transition: height 0.6s;
+}
+
+.header_menu {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-38%);
+}
+
+.header_menu li {
+  float: left;
+  display: block;
+  opacity: 0.7;
+}
+
+.mypage a {
+  display: block;
+  width: 20px;
+  height: 22px;
+  background: url("../img/icon.png") no-repeat -29px -209px;
+
+  margin-right: 20px;
+}
+
+.search a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: url("../img/icon.png") no-repeat -87px -209px;
+}
+
+.header_menu li:hover {
+  opacity: 1;
+}
+
+/* 배너 */
+#banner {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.banner_float_img_wrap div {
+  z-index: 5;
+  position: absolute;
+}
+.banner_float1 {
+  top: 20%;
+  left: 36%;
+  width: 7.3vw;
+  height: 7.3vw;
+  background: url(../img/banner_float1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  animation: bannerfloat1 3s infinite ease;
+}
+.banner_float2 {
+  bottom: 18%;
+  left: 44%;
+
+  width: 7.864vw;
+  height: 8.229vw;
+  background: url(../img/banner_float2.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  animation: bannerfloat2 3s infinite cubic-bezier(0.25, 0.1, 0.13, 1);
+}
+.banner_float3 {
+  top: 14%;
+  right: 10vw;
+
+  width: 6.25vw;
+  height: 6.25vw;
+  background: url(../img/banner_float3.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  animation: bannerfloat3 6s infinite ease;
+}
+.banner_float4 {
+  bottom: 15%;
+  right: 10%;
+
+  width: 6.04vw;
+  height: 6.04vw;
+  background: url(../img/banner_float4.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  animation: bannerfloat4 8s infinite ease;
+}
+
+@keyframes bannerfloat1 {
+  0% {
+    margin-top: 0px;
+    scale: 1;
+    rotate: 0deg;
+  }
+  25% {
+    margin-top: 6px;
+    scale: 0.98;
+  }
+  50% {
+    margin-top: 2px;
+    scale: 1;
+    rotate: 5deg;
+  }
+  75% {
+    margin-top: 6px;
+    scale: 0.98;
+  }
+  100% {
+    margin-top: 0px;
+    scale: 1;
+    rotate: 0deg;
+  }
+}
+@keyframes bannerfloat2 {
+  0% {
+    margin-bottom: 0;
+    rotate: 0deg;
+    scale: 1;
+  }
+  20% {
+    rotate: 5deg;
+    scale: 0.98;
+  }
+  40% {
+    margin-bottom: 5px;
+    rotate: 0deg;
+    scale: 1;
+  }
+  60% {
+    rotate: 5deg;
+    scale: 0.96;
+  }
+  80% {
+    rotate: -5deg;
+    scale: 0.98;
+  }
+  100% {
+    margin-bottom: 0;
+    rotate: 0deg;
+    scale: 1;
+  }
+}
+@keyframes bannerfloat3 {
+  0% {
+    margin-bottom: 0px;
+  }
+  25% {
+    rotate: -20deg;
+  }
+  50% {
+    margin-bottom: 2px;
+    rotate: 0deg;
+  }
+  75% {
+    rotate: 20deg;
+  }
+  100% {
+    margin-bottom: 0px;
+    rotate: 0deg;
+  }
+}
+@keyframes bannerfloat4 {
+  0% {
+    margin-right: -10px;
+    rotate: 0deg;
+  }
+  50% {
+    margin-right: -12px;
+    rotate: 5deg;
+  }
+  100% {
+    margin-right: -10px;
+    rotate: 0deg;
+  }
+}
+
+.swiper {
+  width: 100vw;
+  height: 800px;
+}
+
+.pic1 {
+  width: 100%;
+  display: block;
+  background: url(../img/banner.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.pic2 {
+  width: 100%;
+  background: url(../img/banner2.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* banner txt */
+
+.bann_txt_wrap {
+  position: absolute;
+  left: 18%;
+  top: 50%;
+  transform: translateY(-40%);
+}
+.bann_txt_wrap img {
+  height: 10.5rem;
+}
+.bann_txt_p {
+  font: 300 1.25rem/2rem "Spoqa Han Sans Neo";
+  padding: 32px 0 34px;
+}
+
+.bann_more a {
+  display: inline-block;
+  padding: 12px 50px;
+  background-color: #069efc;
+  color: #fff;
+  font: 300 1.6rem/1.5rem "Raleway", "SpoqaHanSansNeo";
+  border-radius: 500px;
+}
+
+.bann_more a:hover {
+  opacity: 0.8;
+}
+
+.ban_prev {
+  position: absolute;
+  left: 6%;
+  content: "";
+  display: block;
+  width: 22px;
+  height: 42px;
+  background: url(../img/icon.png) no-repeat -29px -269px;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+  content: "";
+}
+
+.ban_next {
+  position: absolute;
+  right: 6%;
+  content: "";
+  display: block;
+  width: 22px;
+  height: 42px;
+  background: url(../img/icon.png) no-repeat -89px -269px;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "";
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 5%;
+}
+
+.swiper-pagination-bullet {
+  background: #1993de;
+}
+.swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  border-radius: 100px;
+}
+.swiper-pagination-bullet-active {
+  width: 2rem;
+  transition: all 0.2s;
+}
+
+/* introduce section */
+
+#introduce {
+  position: relative;
+  width: 100%;
+
+  margin: 32px 0 160px;
+}
+
+/* 기본 스타일 제거 */
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  font-family: "SpoqaHanSansNeo", "Raleway";
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6;
+  background: url(../img/arrow_20px.png) no-repeat right 4px center;
+
+  background-color: #ffffff00;
+
+  padding: 0.2rem 1.6rem 0.2rem 0.2rem;
+  margin: 0;
+
+  border: none;
+  border-bottom: 1px solid #aeaeae;
+
+  text-align: center;
+  min-width: 216px;
+}
+#select_breed {
+  color: #aeaeae;
+  border-bottom: 1px solid #aeaeae;
+}
+#select_weight {
+  color: #aeaeae;
+  border-bottom: 1px solid #aeaeae;
+}
+#select_specialnote {
+  color: #aeaeae;
+  border-bottom: 1px solid #aeaeae;
+}
+select::-ms-expand {
+  display: none; /*for IE10,11*/
+}
+
+.recomm_box {
+  width: 45%;
+  height: 520px;
+}
+
+.recomm_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 4rem 1rem;
+}
+
+.recomm_wrap h2 {
+  font: 700 1.6rem "Raleway", "SpoqaHanSansNeo";
+  color: #111111;
+  display: block;
+}
+
+.recomm_select p {
+  font: 500 1.2rem/1.5 "Raleway", "SpoqaHanSansNeo";
+  color: #777777;
+  display: block;
+}
+
+.recomm_select {
+  margin: 5% 0;
+  font: 500 1.2rem/1.5 "Raleway", "SpoqaHanSansNeo";
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+.recomm {
+  width: 100%;
+  display: block;
+  padding: 4% 0;
+}
+
+.recomm_btn_w {
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.select_arrow {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 6px;
+  background: url(../img/icon.png) no-repeat -152px -218px;
+  background-size: cover;
+  background-position: center;
+}
+
+.recomm p,
+.recomm select {
+  float: left;
+}
+
+.recomm_go,
+.recomm_re {
+  display: block;
+  float: left;
+}
+
+.recomm_go {
+  padding: 12px 40px;
+  background-color: #069efc;
+  color: #fff;
+  font-size: 1.25rem;
+  border-radius: 500px;
+  cursor: pointer;
+  margin-right: 2%;
+}
+.recomm_go:hover {
+  opacity: 0.8;
+}
+.recomm_re {
+  padding: 12px 40px;
+  background-color: #fff;
+  border: 1px solid #777;
+  color: #777;
+  font: 300 1.25rem "Raleway", "SpoqaHanSansNeo";
+  border-radius: 500px;
+  cursor: pointer;
+}
+.recomm_re:hover {
+  border: 1px solid #069efc;
+  color: #069efc;
+}
+
+.alldog_wrap {
+  position: relative;
+  float: right;
+  width: 54%;
+  background-color: #f5fbff;
+  border-radius: 20px;
+
+  padding: 8rem;
+  box-sizing: border-box;
+}
+
+.alldog_txt h2 {
+  font: 700 1.6rem "Raleway", "SpoqaHanSansNeo";
+  color: #111111;
+  display: block;
+}
+.alldog_txt p {
+  margin: 5% 0 8%;
+  font: 500 1.2rem/2.2 "Raleway", "SpoqaHanSansNeo";
+  color: #777777;
+}
+.alldog_btn {
+  display: inline-block;
+  padding: 12px 40px;
+  border: 1px solid #069efc;
+  color: #069efc;
+  font: 300 1.25rem "Raleway", "SpoqaHanSansNeo";
+  border-radius: 500px;
+
+  cursor: pointer;
+}
+.alldog_btn:hover {
+  background-color: #069efc;
+  color: #fff;
+}
+
+.alldog_img {
+  position: absolute;
+  bottom: 16%;
+  right: 9%;
+
+  width: 10rem;
+  height: 10rem;
+  background: url(../img/alldog.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 신규 프로그램 */
+#newp {
+  padding: 0 0 80px;
+  display: flex;
+  flex-direction: column;
+}
+.newp_intro {
+  position: relative;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.newp_intro h2 {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: #111;
+}
+
+.new_float1 {
+  position: absolute;
+  top: 8%;
+  left: 16%;
+
+  width: 4.17vw;
+  height: 4.17vw;
+  background: url(../img/new_float1.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  animation: bannerfloat3 6s infinite ease;
+}
+
+.new_float2 {
+  position: absolute;
+  top: 26%;
+  left: 0;
+
+  width: 10.85vw;
+  height: 10.22vw;
+  background: url(../img/new_float2.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  animation: bannerfloat4 2s infinite ease;
+}
+
+@keyframes bannerfloat4 {
+  0% {
+    margin-bottom: 1px;
+  }
+  50% {
+    rotate: -1deg;
+  }
+  100% {
+    margin-bottom: 0px;
+    rotate: 1deg;
+  }
+}
+
+.newp_btn_wrap {
+  margin-top: 40px;
+}
+
+.newp_btn_wrap div {
+  display: inline-block;
+  width: 18rem;
+  box-sizing: border-box;
+  padding: 12px 40px;
+  border: 1px solid #111;
+  color: #111;
+  font-size: 1.25rem;
+  border-radius: 500px;
+  cursor: pointer;
+}
+
+.newp_btn_wrap div:hover {
+  opacity: 0.6;
+}
+
+.newp_btn_online {
+  margin-right: 1%;
+}
+
+.newp_btn_wrap > .on {
+  background-color: #111;
+  color: #fff;
+}
+
+.newp_btn_wrap > .on:hover {
+  opacity: 0.8;
+}
+
+.newp_morebtn {
+  width: 2.66vw;
+  height: 2.66vw;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: #111;
+  font-size: 1.25rem;
+  border-radius: 500px;
+  cursor: pointer;
+
+  position: absolute;
+  top: 128px;
+  right: 2.5%;
+
+  animation: topbtnfloat 4s infinite ease-in-out;
+}
+.newp_morebtn a {
+  display: block;
+  width: 0.83vw;
+  height: 0.83vw;
+  background: url("../img/icon.png") no-repeat -52px -344px;
+  box-sizing: border-box;
+
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.newp_morebtn:hover a {
+  background: url("../img/icon.png") no-repeat -78px -344px;
+}
+
+.newp_tab_wrap {
+  position: relative;
+}
+
+.newp_img_wrap {
+  width: 100%;
+  height: 460px;
+  text-align: center;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.newp_img_wrap > div {
+  transition: all 0.4s;
+  display: flex;
+}
+.newp_tab {
+  display: none;
+  margin-bottom: 60px;
+}
+.newp_tab.on {
+  display: block;
+  cursor: pointer;
+}
+.online_class_tab .newp_img1 {
+  display: inline-block;
+  width: 27.7%;
+  height: 440px;
+  background: url(../img/newp_img1-1.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.online_class_tab .newp_img2 {
+  display: inline-block;
+  width: 27.7%;
+  height: 440px;
+  background: url(../img/newp_img1-2.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.online_class_tab .newp_img3 {
+  display: inline-block;
+  width: 27.7%;
+  height: 440px;
+  background: url(../img/newp_img1-3.png) no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.dog_kinder_tab .newp_img1 {
+  display: inline-block;
+  width: 27.7%;
+  height: 440px;
+  background: url(../img/newp_img2-1.png) no-repeat;
+  background-size: auto 440px;
+  background-position: center;
+  margin-right: 5.833%;
+}
+.dog_kinder_tab .newp_img2 {
+  display: inline-block;
+  width: 27.7%;
+  height: 440px;
+  background: url(../img/newp_img2-2.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-right: 5.833%;
+}
+.dog_kinder_tab .newp_img3 {
+  display: inline-block;
+  width: 27.7%;
+  height: 440px;
+  background: url(../img/newp_img2-3.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.newp_txt_wrap {
+  height: 120px;
+  padding: 3rem;
+}
+.newp_txt_wrap h3 {
+  width: 34%;
+  margin-right: 4%;
+  display: block;
+  font: 900 1.6rem/1.6 "Raleway", "SpoqaHanSansNeo";
+  color: #111;
+  float: left;
+}
+.newp_txt_wrap h3:hover,
+.newp_txt_wrap div:hover {
+  opacity: 0.8;
+}
+
+.newp_txt_wrap .newp_txt_info_wrap1 {
+  width: 29%;
+  margin-right: 6%;
+  display: block;
+  float: left;
+}
+.newp_txt_info_wrap1 h5 {
+  font: 700 1.1rem "SpoqaHanSansNeo", "Raleway";
+  color: #111;
+  padding-bottom: 0.5rem;
+}
+.newp_txt_info_wrap1 p {
+  font: 300 1rem "SpoqaHanSansNeo", "Raleway";
+  color: #111;
+  letter-spacing: 0.5px;
+}
+
+.newp_txt_wrap .newp_txt_info_wrap2 {
+  width: 27%;
+  display: block;
+  float: right;
+}
+.newp_txt_info_wrap2 h5 {
+  font: 700 1.1rem "SpoqaHanSansNeo", "Raleway";
+  color: #111;
+  padding-bottom: 0.5rem;
+}
+.newp_txt_info_wrap2 p {
+  font: 300 1rem "SpoqaHanSansNeo", "Raleway";
+  color: #111;
+  letter-spacing: 0.5px;
+}
+/* 스와이퍼 기능 변경 */
+
+#expert {
+  width: 100%;
+  height: 680px;
+  background-color: #111;
+}
+
+.expert_txt_wrap {
+  color: #fff;
+  width: 34%;
+  margin-right: 1%;
+  float: left;
+  padding: 230px 0;
+  box-sizing: border-box;
+}
+.expert_txt_wrap h3 {
+  font: 700 1.6rem "Raleway", "SpoqaHanSansNeo";
+  margin-bottom: 20px;
+}
+.expert_txt_wrap p {
+  font: 500 1rem "Raleway", "SpoqaHanSansNeo";
+  margin-bottom: 40px;
+}
+
+.expert_more a {
+  display: inline-block;
+  padding: 12px 50px;
+  border: 1px solid #fff;
+  color: #fff;
+  font: 300 1.6rem/1.5 "Raleway", "SpoqaHanSansNeo";
+  border-radius: 500px;
+}
+.expert_more:hover a {
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+}
+.expert_img_wrap {
+  width: 65%;
+  height: auto;
+  float: right;
+
+  padding: 190px 0;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+}
+.expert_img_wrap img {
+  display: block;
+}
+/* program */
+
+.program_info_wrap {
+  position: relative;
+  margin: 160px auto 120px;
+}
+.program_info_wrap > div {
+  position: absolute;
+}
+.pro_info_title h2 {
+  font: 700 2.5rem "Raleway", "SpoqaHanSansNeo";
+  margin-bottom: 20px;
+  color: #111;
+}
+.pro_info_title p {
+  font: 300 1.5rem/1.5 "Raleway", "SpoqaHanSansNeo";
+  color: #111;
+}
+
+.program_info_wrap {
+  height: 1700px;
+  background: url(../img/program_bg.png);
+}
+
+.program_info_wrap > div > a > h3 {
+  font: 700 1.5rem "Raleway", "SpoqaHanSansNeo";
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.program_info_wrap > div > a > p {
+  font: 300 1rem/1.5 "Raleway", "SpoqaHanSansNeo";
+  font-size: 1rem;
+  color: #777;
+}
+.pro_info_title {
+  top: 2%;
+  right: 22%;
+}
+.prifit_class {
+  top: 10%;
+  left: 8%;
+}
+.manner_class {
+  bottom: 3%;
+  left: 27%;
+}
+.oneday_class {
+  bottom: 38%;
+  right: 9%;
+}
+
+.program_info_wrap a > div {
+  overflow: hidden;
+  border-radius: 600px;
+  scale: 1;
+  margin-bottom: 26px;
+}
+.class_img {
+  width: 94%;
+}
+.program_info_wrap a > div > img {
+  display: block;
+  scale: 1;
+  filter: grayscale(100%);
+
+  transition: all 0.3s;
+}
+
+.program_info_wrap a:hover > div > img {
+  scale: 1.05;
+  filter: grayscale(0);
+}
+
+/* review */
+#review {
+  width: 100%;
+  overflow: hidden;
+}
+
+.review_wrap {
+  width: 100%;
+  height: 720px;
+  background: url(../img/review_bg.png);
+}
+
+.swiper_review > .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.swiper_review .swiper-slide {
+  position: relative;
+  top: 50%;
+  left: 0;
+  transform: translateY(-40%);
+  width: 16.8%;
+  margin-right: 6%;
+  height: 300px;
+  padding-top: 4.1%;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #fff3e8e8;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 10px rgba(250, 235, 227, 0.305);
+  backdrop-filter: blur(20px);
+}
+
+.swiper_review .r1 {
+  transform: translateY(-70%);
+}
+.swiper_review .r3 {
+  transform: translateY(-60%);
+}
+.swiper_review .r5 {
+  transform: translateY(-70%);
+}
+
+.review_thumb {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.review_thumb img {
+  width: 80%;
+  height: auto;
+  border-radius: 100px;
+}
+.review_txt {
+  width: 80%;
+  height: 93%;
+  margin: 0 auto;
+  vertical-align: middle;
+  color: #111;
+}
+
+.review_txt h3 {
+  font: 300 1.2rem/1.5 "Raleway", "SpoqaHanSansNeo";
+  vertical-align: middle;
+  text-align: center;
+}
+.review_txt h3::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../img/icon.png") no-repeat -30px -344px;
+
+  margin: 0 8px 2px 0;
+  vertical-align: middle;
+}
+.review_txt p {
+  width: 100%;
+  padding-top: 5%;
+  font: 300 1rem/1.6 "SpoqaHanSansNeo", "Raleway";
+  color: #999;
+  margin: 0 auto;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+/* contact */
+#contact {
+  margin: 40px 0;
+  width: 100%;
+  height: 680px;
+
+  position: relative;
+  overflow: hidden;
+}
+.contact_wrap {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  vertical-align: middle;
+  background: url(../img/contact_bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  font: 700 1rem/1.6 "Raleway", "SpoqaHanSansNeo";
+}
+
+.contact_wrap h2 {
+  position: absolute;
+  top: 45%;
+  left: 26%;
+  font: 700 1.5rem "SpoqaHanSansNeo", "Raleway";
+  color: #111;
+}
+.contact_txt {
+  width: 60%;
+  position: absolute;
+  top: 60%;
+  left: 40%;
+}
+.contact_txt div {
+  float: left;
+
+  width: 32%;
+  margin-right: 2%;
+}
+.contact_txt div h3 {
+  margin-bottom: 12px;
+  font: 500 1.3rem "SpoqaHanSansNeo", "Raleway";
+  color: #333;
+}
+.contact_txt div p {
+  font: 500 1rem/2 "SpoqaHanSansNeo", "Raleway";
+  color: #777;
+}
+
+/* footer */
+.footer_wrap {
+  position: relative;
+
+  width: 100%;
+  height: 980px;
+  background: url(../img/footer_bg.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer_wrap .nav_map {
+  color: #fff;
+  position: absolute;
+  top: 44%;
+  left: 4%;
+  width: 60%;
+  height: 372px;
+
+  vertical-align: top;
+}
+.footer_wrap .nav_map ul {
+  width: 32%;
+  margin-right: 1%;
+  display: inline-block;
+}
+.footer_wrap .nav_map ul h5 {
+  font: 300 1rem "Raleway", "SpoqaHanSansNeo";
+  margin-bottom: 40px;
+}
+.footer_wrap .nav_map ul li {
+  font: 300 1.2rem "Raleway", "SpoqaHanSansNeo";
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.footer_bottom {
+  position: absolute;
+  bottom: 6%;
+  left: 4%;
+  font: 300 0.8rem "SpoqaHanSansNeo", "Raleway";
+}
+.business_info p {
+  font: 100 1rem/1.5 "SpoqaHanSansNeo", "Raleway";
+  color: #fff;
+}
+.site_info ul li {
+  float: left;
+  margin: 1.5rem 2rem 0 0;
+  font: 500 1rem/1.5 "SpoqaHanSansNeo", "Raleway";
+  color: #fff;
+  cursor: pointer;
+}
+.nav_map ul li:hover {
+  opacity: 0.6;
+}
+.copyright {
+  position: absolute;
+  bottom: 6%;
+  right: 4%;
+  font: 100 1rem "SpoqaHanSansNeo", "Raleway";
+  color: #069efc;
+}
+.top_btn {
+  opacity: 0.8;
+
+  position: absolute;
+  top: 16%;
+  right: 3%;
+}
+.top_btn a {
+  display: block;
+  width: 180px;
+  height: 180px;
+  background: url("../img/icon.png") no-repeat 0 0;
+
+  animation: topbtnfloat 2.5s infinite ease-in-out;
+  transition: all 5s;
+}
+
+.top_btn:hover {
+  opacity: 1;
+}
+
+@keyframes topbtnfloat {
+  0% {
+    transform: translateY(4px);
+  }
+  5% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(4px);
+  }
+  15% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(4px);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+@media (max-width: 1600px) {
+  .dogBreed,
+  .dogWeight,
+  .specialNote {
+    font-size: 1rem;
+    min-width: 140px;
+  }
+  .recomm_select p {
+    font: 500 1rem/1.2 "Raleway", "SpoqaHanSansNeo";
+  }
+  .alldog_wrap {
+    width: 50%;
+    padding: 5rem;
+  }
+  .alldog_txt p {
+    font: 500 1rem/2 "Raleway", "SpoqaHanSansNeo";
+  }
+  .new_float1 {
+    left: 9%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .banner_float1 {
+    display: none;
+  }
+  .banner_float2 {
+    display: none;
+  }
+  .banner_float3 {
+    display: none;
+  }
+  .banner_float4 {
+    display: none;
+  }
+  .ban_prev {
+    display: none;
+  }
+  .ban_next {
+    display: none;
+  }
+  .pic1,
+  .pic2 {
+    background-position: 65% center;
+  }
+  .bann_txt_wrap {
+    left: 8%;
+    padding: 22px;
+    background-color: #ffffffaa;
+    backdrop-filter: blur(10px);
+    border-radius: 40px;
+  }
+  .bann_more a {
+    font: 300 1.4rem/1.4rem "Raleway", "SpoqaHanSansNeo";
+  }
+  .recomm_wrap {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #069efc;
+    border-radius: 20px;
+    padding: 2rem 1rem;
+  }
+  .recomm_btn_w {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .recomm_box {
+    width: 100%;
+  }
+  #introduce .wrap_1600 {
+    flex-direction: column;
+  }
+  .recomm {
+    justify-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+  }
+  .alldog_wrap {
+    width: 100%;
+    padding: 6rem;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+  header .header_wrap h1 a {
+    margin-left: 50%;
+  }
+  .gnav {
+    display: none;
+  }
+  .m_btn a {
+    display: block;
+    width: 22px;
+    height: 19px;
+    background: url(../img/icon.png) -138px -210px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  .bann_txt_wrap img {
+    height: 8.5rem;
+  }
+  .bann_txt_p {
+    font: 300 1.1rem/1.8rem "Spoqa Han Sans Neo";
+    padding: 32px 0 34px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .bann_txt_wrap img {
+    height: 8rem;
+  }
+  .bann_txt_p {
+    font: 300 1rem/1.4rem "Spoqa Han Sans Neo";
+    padding: 22px 0 24px;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+  .bann_txt_wrap img {
+    height: 6rem;
+  }
+  .bann_txt_wrap {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 60%;
+    width: 80%;
+    text-align: center;
+  }
+  .pic1 {
+    background: url(../img/mo_ban1.png) no-repeat center/cover;
+  }
+  .pic2 {
+    background: url(../img/mo_ban2.png) no-repeat center/cover;
+  }
+  .recomm_wrap {
+    height: 72%;
+  }
+  .recomm_box {
+    height: 460px;
+  }
+  #introduce {
+    margin: 32px 0 0;
+    height: auto;
+  }
+  .alldog_wrap {
+    padding: 4rem;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
